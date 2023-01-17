@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  gap: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.Body{
+background-image: linear-gradient(to right top, #000000, #2a1515, #4a2418, #623b10, #6d5900);
+font-family: 'Oswald', sans-serif;
+width: 100vw;
+height: 100vh;
+position: absolute;
+top: 0px;
+left: 0px;
+color:#f5f5f4;
+font-size: 13pt;
+}
+
+.Table {
+  border:1px solid #C0C0C0;
+  border-collapse:collapse;
+  border-spacing:2px;
+  padding:5px;
+}
+.Table th {
+  border:1px solid #C0C0C0;
+  padding:5px;
+background-color: transparent;
+font-family: 'Covered By Your Grace', cursive;
+font-size: 14pt;
+font-weight: 100;
+}
+.Table td {
+  border:1px solid #C0C0C0;
+  text-align:left;
+  padding:5px;
+ background-color: transparent;
+}
+
+.TableContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 2px;
+}
+caption{
+  font-size: 20pt;
+  font-family: 'Rubik Vinyl', cursive;
+}
+
+.button::after {
+	content: "";
+	width: 200px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(-100px - 80px);
+	border-bottom: 80px solid #f5f5f4;
+	border-right: 80px solid transparent;
+	transition: .5s ease-in-out all;
+
+}
+
+.button:hover::after {
+	left: 0;
+
+}
+
+.button:hover {
+  color: #000000;
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 120px;
+	height: 30px;
+	background: #D19F15;
+	color: #000000;
+  font-family: 'Covered By Your Grace';
+	font-size: 12pt;
+  font-weight: 700;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: .3s ease all;
+	border-radius: 7px;
+	position: relative;
+	overflow: hidden;
+}
+
+.button span {
+	position: relative;
+	z-index: 2;
+}
+
+.form_table_input::placeholder {
+  color:#D19F15;
+  text-align: center;
+  font-size: 12pt;
+  font-weight: 800;
+}
+
+.form_table_input{
+  display: flex;
+  width: 240px;
+  height: 30px;
+  outline: none;
+  background-color: #000000;
+  border-radius: 10px;
+  border-color: #f8f9fa;
+  text-align: center;
+  color: #f8f9fa;
+}
+.form_table_input:hover::placeholder{
+  color:#f8f9fa;
+  transition: .3s ease all;
+}
