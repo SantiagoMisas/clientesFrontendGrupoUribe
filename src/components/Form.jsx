@@ -4,7 +4,7 @@ const Form = () => {
   return (
 
         <form className='flexWrap' action="">
-    		<input className="form_table_input" placeholder='Marca' type="text"/>
+    		    <input className="form_table_input" placeholder='Marca' type="text"/>
             <input className="form_table_input" placeholder='Tipo De Id' type="text"/>
             <input className="form_table_input" placeholder='Numero De Id' type="text"/>
             <input className="form_table_input" placeholder='Primer Nombre' type="text"/>

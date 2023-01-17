@@ -7,7 +7,7 @@ import Form from './Form.jsx'
 const Body = () => {
   return (
 <section className='Body'>
-<Form/>
+    <Form/>
     <Buttons/>
     <ClientTable/>
 
