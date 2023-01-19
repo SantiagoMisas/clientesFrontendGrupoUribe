@@ -14,7 +14,7 @@ const Add = () => {
   const [segundoNombre, setSegundoNombre] = useState();
   const [primerApellido, setPrimerApellido] = useState();
   const [segundoApellido, setSegundoApellido] = useState();
-  const [fechaDeNacimiento, set] = useState();
+  const [fechaDeNacimiento, setFechaDeNacimiento] = useState();
   const [pais, setPais] = useState();
   const [departamento, setDepartamento] = useState();
   const [ciudad, setCiudad] = useState();
@@ -24,11 +24,23 @@ const Add = () => {
 
   useEffect(() => {}, []);
 
-  const handleChange = (e) => {};
+  const createCliente = async (e) => {
+    axios.post(urlListarCliente, {
+      direccion: direccion,
+      fecha_de_nacimiento: fechaDeNacimiento,
+      nombre_de_ciudad: ciudad,
+      nombre_de_departamento: departamento,
+      nombre_de_marca: marca,
+      nombre_de_pais: pais,
+      numero_de_identificacion: numeroDeId,
+      primer_apellido: primerApellido,
+      primer_nombre: primerNombre,
+      segundo_apellido: segundoApellido,
+      segundo_nombre: segungoNombre,
+      tipo_de_identificacion: tipoDeId,
+    });
+  };
 
-  const handleSubmit = (e) => {};
-
-  const handleReset = (e) => {};
   return (
     <form onSubmit={handleSubmit} className="flexWrap" action="">
       <select
@@ -36,6 +48,7 @@ const Add = () => {
         id="marca"
         name="marca"
         onChange={(e) => setMarca(e.target.value)}
+        value={marca}
       >
         <option value="">Marca</option>
         <option value="Chevignon">Chevignon</option>
@@ -50,6 +63,7 @@ const Add = () => {
         id="tipoDeId"
         name="tipoDeId"
         onChange={(e) => setTipoDeId(e.target.value)}
+        value={tipoDeId}
       >
         <option value="">Tipo De Documento</option>
         <option value="Cedula">Cedula</option>
@@ -58,39 +72,39 @@ const Add = () => {
       </select>
       <input
         value={numeroDeId}
-        onChange={handleChange}
         name="numeroDeId"
         className="form_table_input"
         placeholder="Numero De Id"
         type="text"
+        onChange={(e) => setNumeroDeId(e.target.value)}
       />
       <input
         value={primerNombre}
-        onChange={handleChange}
         name="primerNombre"
         className="form_table_input"
         placeholder="Primer Nombre"
         type="text"
+        onChange={(e) => setPrimerNombre(e.target.value)}
       />
       <input
         value={segundoNombre}
-        onChange={handleChange}
         name="segundoNombre"
         className="form_table_input"
         placeholder="Segundo Nombre"
         type="text"
+        onChange={(e) => setSegundoNombre(e.target.value)}
       />
       <input
         value={primerApellido}
-        onChange={handleChange}
         name="primerApellido"
         className="form_table_input"
         placeholder="Primer Apellido"
         type="text"
+        onChange={(e) => setPrimerApellido(e.target.value)}
       />
       <input
         value={segundoApellido}
-        onChange={handleChange}
+        onChange={(e) => setSegundoApellido(e.target.value)}
         name="segundoApellido"
         className="form_table_input"
         placeholder="Segundo Apellido"
@@ -98,7 +112,7 @@ const Add = () => {
       />
       <input
         value={fechaDeNacimiento}
-        onChange={handleChange}
+        onChange={(e) => setFechaDeNacimiento(e.target.value)}
         name="fechaDeNacimiento"
         className="form_table_input"
         placeholder="Fecha De Nacimiento"
@@ -109,6 +123,7 @@ const Add = () => {
         id="pais"
         name="pais"
         onChange={(e) => setPais(e.target.value)}
+        value={pais}
       >
         <option value="">Pais</option>
         <option value="pais">Colombia</option>
@@ -118,6 +133,8 @@ const Add = () => {
         id="departamento"
         name="departamento"
         required
+        value={departamento}
+        onChange={(e) => setDepartamento(e.target.value)}
       >
         <option value="">Departamento</option>
         <option value="Amazonas">Amazonas</option>
@@ -155,7 +172,12 @@ const Add = () => {
         <option value="Vaupés">Vaupés</option>
         <option value="Vichada">Vichada</option>
       </select>
-      <select className="form_table_input" id="inputCiudadLine2">
+      <select
+        className="form_table_input"
+        id="inputCiudadLine2"
+        onChange={(e) => setCiudad(e.target.value)}
+        value={ciudad}
+      >
         <option value="">Ciudad</option>
         <option value="Arauca">Arauca</option>
         <option value="Armenia">Armenia</option>
@@ -192,20 +214,31 @@ const Add = () => {
       </select>
       <input
         value={direccion}
-        onChange={handleChange}
+        onChange={(e) => setDireccion(e.target.value)}
         name="direccion"
         className="form_table_input"
         placeholder="Dirección"
         type="text"
       />
-      <button onChange={handleChange} type="submit" value="Agregar"  className="button"><span>Agregar</span></button>
       <button
-       className="button"
+        onChange={handleChange}
+        type="submit"
+        value="Agregar"
+        className="button"
+        onClick={createCliente}
+  
+      >
+        <span>Agregar</span>
+      </button>
+      <button
+        className="button"
         onChange={handleChange}
         onClick={handleReset}
         type="reset"
         value="Limpiar"
-      ><span>Buscar</span></button>
+      >
+        <span>Buscar</span>
+      </button>
     </form>
   );
 };
