@@ -5,7 +5,7 @@ import { useFormAction } from "react-router-dom";
 import Buttons from "./Buttons";
 
 const Add = () => {
-  const uriCliente = "https//localhost:8080/cliente";
+  const uriGuardarCliente = "http://localhost:8080/cliente/save-client";
 
   const [marca, setMarca] = useState();
   const [tipoDeId, setTipoDeId] = useState();
@@ -25,20 +25,27 @@ const Add = () => {
   useEffect(() => {}, []);
 
   const createCliente = async (e) => {
-    axios.post(urlListarCliente, {
-      direccion: direccion,
-      fecha_de_nacimiento: fechaDeNacimiento,
-      nombre_de_ciudad: ciudad,
-      nombre_de_departamento: departamento,
-      nombre_de_marca: marca,
-      nombre_de_pais: pais,
-      numero_de_identificacion: numeroDeId,
-      primer_apellido: primerApellido,
-      primer_nombre: primerNombre,
-      segundo_apellido: segundoApellido,
-      segundo_nombre: segungoNombre,
-      tipo_de_identificacion: tipoDeId,
-    });
+    try {
+      axios.post(uriGuardarCliente, {
+        direccion: direccion,
+        fecha_de_nacimiento: fechaDeNacimiento,
+        nombre_de_ciudad: ciudad,
+        nombre_de_departamento: departamento,
+        nombre_de_marca: marca,
+        nombre_de_pais: pais,
+        numero_de_identificacion: numeroDeId,
+        primer_apellido: primerApellido,
+        primer_nombre: primerNombre,
+        segundo_apellido: segundoApellido,
+        segundo_nombre: segundoNombre,
+        tipo_de_identificacion: tipoDeId,
+      });
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+    
   };
 
   return (
