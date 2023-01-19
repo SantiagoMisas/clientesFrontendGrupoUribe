@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ClientTable = () => {
+const ClientTable = ({data}) => {
   return (
 <section className='flexWrap'>
 	<section className='TableContainer'>

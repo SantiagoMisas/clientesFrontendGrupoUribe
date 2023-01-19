@@ -1,6 +1,9 @@
-import React from 'react'
+import { useState } from 'react';
 import Add from './Add';
+import ClientTable from './ClientTable';
 
+
+const [db, setDb] = useState(initialDb);
 const initialDb=[
  {
   id: 1,
@@ -36,7 +39,9 @@ const initialDb=[
 const CrudApp = () => {
   return (
 <section>
-  <Add/>
+<Add/>
+<ClientTable data={db}/>
+
 </section>
   )
 }
