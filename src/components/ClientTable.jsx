@@ -45,34 +45,40 @@ const mapTable= async ()=>{
 				{clientes.map((cliente)=>{
 					<tr key={cliente.id}>
 						<td>
-							{cliente.primerNombre}
+							{cliente.marca}
+						</td>
+						<td>
+							{cliente.tipoDeId}
+						</td>
+						<td>
+							{cliente.numeroDeId}
 						</td>
 						<td>
 							{cliente.primerNombre}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.segundoNombre}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.primerApellido}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.segundoApellido}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.fechaDeNacimiento}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.nombreDePais}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.nombreDeDepartamento}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.nombreDeCiudad}
 						</td>
 						<td>
-							{cliente.primerNombre}
+							{cliente.direccion}
 						</td>
 					</tr>
 				})}
