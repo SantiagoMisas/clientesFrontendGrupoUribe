@@ -1,6 +1,24 @@
 import React from 'react'
+import axios from 'axios'
+import { useState, useEffect } from "react";
 
 const ClientTable = ({data}) => {
+
+	const uriListClients="http://localhost:8081/cliente/list-client"
+const [clientes, setclientes] = useState([]);
+
+const mapTable= async ()=>{
+
+	const informationClients=await axios.get(uriListClients)
+
+	setclientes(informationClients.data)
+	console.table(clientes)
+	console.log(informationClients.data)	
+}
+		useEffect(()=>{
+			mapTable()
+		},[])
+
   return (
 <section className='flexWrap'>
 	<section className='TableContainer'>
@@ -24,19 +42,41 @@ const ClientTable = ({data}) => {
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				{clientes.map((cliente)=>{
+					<tr key={cliente.id}>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+						<td>
+							{cliente.primerNombre}
+						</td>
+					</tr>
+				})}
+					<tr>
 				<td className='center'>
 				<button className='tableButton'>
 				<div className="icono">

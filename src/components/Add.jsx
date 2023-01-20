@@ -26,7 +26,21 @@ const Add = () => {
   const createCliente = async (e) => {
     e.preventDefault
     try {
-      
+      console.log(direccion)
+      console.log(fechaDeNacimiento)
+      console.log(ciudad)
+      console.log(departamento)
+      console.log(marca)
+      console.log(pais)
+      console.log(numeroDeId)
+      console.log(primerApellido)
+      console.log(primerNombre)
+      console.log(segundoApellido)
+      console.log(segundoNombre)
+      console.log(tipoDeId)
+  
+
+
       const rest=axios.post(uriGuardarCliente, {
         direccion: direccion,
         fecha_de_nacimiento: fechaDeNacimiento,
@@ -66,7 +80,7 @@ const Add = () => {
         <option value="Esprit">Esprit</option>
         <option value="Naf Naf">Naf Naf</option>
         <option value="Rifle">Rifle</option>
-
+{console.log(marca)}
       </select>
       <select
         className="form_table_input"
