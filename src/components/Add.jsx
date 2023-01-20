@@ -49,7 +49,7 @@ const Add = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flexWrap" action="">
+    <form  className="flexWrap" action="">
       <select
         className="form_table_input"
         id="marca"
@@ -228,7 +228,6 @@ const Add = () => {
         type="text"
       />
       <button
-        onChange={handleChange}
         type="submit"
         value="Agregar"
         className="button"
@@ -239,8 +238,6 @@ const Add = () => {
       </button>
       <button
         className="button"
-        onChange={handleChange}
-        onClick={handleReset}
         type="reset"
         value="Limpiar"
       >
