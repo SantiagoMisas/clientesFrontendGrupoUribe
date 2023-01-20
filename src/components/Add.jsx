@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useFormAction } from "react-router-dom";
-import Buttons from "./Buttons";
 
 const Add = () => {
   const uriGuardarCliente = "http://localhost:8080/cliente/save-client";
@@ -58,12 +57,13 @@ const Add = () => {
         value={marca}
       >
         <option value="">Marca</option>
-        <option value="Chevignon">Chevignon</option>
-        <option value="Naf Naf">Naf Naf</option>
         <option value="Americanino">Americanino</option>
-        <option value="AmericanEagle">AmericanEagle</option>
-        <option value="Rifle">Rifle</option>
+        <option value="AmericanEagle">American Eagle</option>
+        <option value="Chevignon">Chevignon</option>
         <option value="Esprit">Esprit</option>
+        <option value="Naf Naf">Naf Naf</option>
+        <option value="Rifle">Rifle</option>
+
       </select>
       <select
         className="form_table_input"
